@@ -1,21 +1,43 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import About from './screens/About';
-import Login from './screens/login';
+import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom';
+import Loadable from 'react-loadable';
 
-const baseURL = 'localhost:3000';
+const baseURL = '';
 
-class App extends Component {
+const Loading = () => (
+    <div style={ {
+    width: '1000px',
+    height: '1000px',
+    backgroundColor: 'red'
+  } }>Loading</div>
+)
+
+const Login = Loadable({
+  loader: () => import('./screens/login'),
+  loading: Loading
+})
+
+const About = Loadable({
+  loader: () => import('./screens/about'),
+  loading: Loading
+})
+
+class App extends React.Component {
   render() {
     return (
-      <Router
-        basename={baseURL}
+        <Router
+        basename={ baseURL }
       >
-        <Switch>
-          <Route path="/about" component={About} />
-          <Route path="/login" component={Login} />
-        </Switch>
-      </Router>
+            <div>
+                <Link to="/login">Login</Link>
+                <Link to="/about">About</Link>
+                <Switch>
+                    <Route exact path="/" component={ () => (<div>Default homepage</div>) } />
+                    <Route exact path="/login" component={ Login } />
+                    <Route exact path="/about" component={ About } />
+                </Switch>
+            </div>
+        </Router>
     );
   }
 }
