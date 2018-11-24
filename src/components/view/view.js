@@ -7,4 +7,4 @@ const View = ({ style, children, ...other }) => {
     )
 }
 
-export default Text;
+export default View;

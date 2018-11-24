@@ -1,0 +1,13 @@
+/* De inlocuit cu variabile de POSTcss - astea sunt variabile globale de css ... not ok */
+:root {
+  --lightPink : #fec0dd;
+  --darkPink: #f9118d;
+  --lightSilver: #dadae5;
+  --lightBlue: #cefcff;
+  --white: #fff;
+  --grey: #e5e5e5;
+  --strawberry: #ef285d;
+  --lightPurple: #c797f4;
+  --lightYellow: #f7f0c5;
+  --mint: #d9f9e2;
+}
