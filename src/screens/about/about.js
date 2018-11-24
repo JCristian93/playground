@@ -1,7 +1,14 @@
 import React from 'react';
+// import Header from '@components/header';
+import Header from '../../components/header';
 
-const About = () => (
-    <div>About screen</div>
-)
+class About extends React.Component {
+  render() {
+    const {} = this.props;
+    return (
+      <Header />
+    );
+  }
+}
 
-export default About
+export default About;

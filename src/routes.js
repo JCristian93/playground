@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom';
 import Loadable from 'react-loadable';
+import AboutScreen from './screens/about';
 
 const baseURL = '';
 
@@ -22,24 +23,23 @@ const About = Loadable({
   loading: Loading
 })
 
-class App extends React.Component {
-  render() {
-    return (
-        <Router
-        basename={ baseURL }
-      >
-            <div>
+const App = () => (
+  <Router
+    basename={ baseURL }
+  >
+      <div>
+          <Switch>
+              <Route exact path="/login" component={ Login } />
+              <Route exact path="/about" component={ AboutScreen } />
+              <Route path="/" component={ () => (<div>
+                Default homepage
                 <Link to="/login">Login</Link>
-                <Link to="/about">About</Link>
-                <Switch>
-                    <Route exact path="/" component={ () => (<div>Default homepage</div>) } />
-                    <Route exact path="/login" component={ Login } />
-                    <Route exact path="/about" component={ About } />
-                </Switch>
-            </div>
-        </Router>
-    );
-  }
-}
+                <Link to="/about">About</Link>            
+            </div>) } />
+
+          </Switch>
+      </div>
+  </Router>
+);
 
 export default App;
