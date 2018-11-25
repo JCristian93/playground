@@ -1,8 +1,8 @@
 import React from 'react';
 import { Menu, Dropdown, Icon, Input } from 'antd';
 
-import Text from '../text';
-import View from '../view';
+import Text from '@components/text';
+import View from '@components/view';
 import Logo from '../../../public/cat-pic.jpg'
 import './header.css';
 
@@ -44,10 +44,11 @@ class UpperHeader extends React.PureComponent {
         />
         <View style={{
           display: 'inline-flex',
+          justifyContent: 'space-between',
           width: '30%',
         }}>
           <View style={{
-            flex: 1,
+            // flex: 1,
           }}>
             <Icon type="user" style={iconStyle}/>
             <Dropdown overlay={menu}>
@@ -57,14 +58,16 @@ class UpperHeader extends React.PureComponent {
             </Dropdown>
           </View>
           <View style={{
-            flex: 1,
+            // flex: 1,
           }}>
             <Icon type="heart" theme="filled" style={iconStyle}  />
+            <Text>Whishlist</Text>
           </View>
           <View style={{
-            flex: 1,
+            // flex: 1,
           }}>
             <Icon type="shopping-cart" style={iconStyle}/>
+            <Text>Shopping cart</Text>            
           </View>
         </View>
       </View>

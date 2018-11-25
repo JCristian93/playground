@@ -1,7 +1,7 @@
 import React from 'react';
 import UpperHeader from './upper-header';
 import LowerHeader from './lower-header';
-import View from '../view';
+import View from '@components/view';
 
 class Header extends React.PureComponent {
   render() {
@@ -10,10 +10,8 @@ class Header extends React.PureComponent {
       <View style={{
         display: 'flex',
         flexDirection: 'column',
-        paddingLeft: '100px',
-        paddingRight: '100px',
       }}
-        className="header__container"
+        className="header__container root__layout"
       >
         <UpperHeader />
         <LowerHeader />

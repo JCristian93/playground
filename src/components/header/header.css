@@ -5,10 +5,21 @@
 
 .ant-menu-horizontal {
   border: 0;
-  background-color: var(--lightSilver);
+  /* background-color: var(--lightSilver); */
+  background-color: #fff;
 }
 
 .header__container {
-  border-bottom: 1px solid var(--lightPurple);
-  background-color: var(--lightSilver);
+  border-bottom: 1px solid var(--strawberry);
+  /* background-color: var(--lightSilver); */
+  background-color: #fff;
+}
+
+.ant-layout-header {
+  /* background-color: var(--lightSilver); */
+  background-color: #fff;
+}
+
+.ant-layout {
+  background-color: #fff;
 }

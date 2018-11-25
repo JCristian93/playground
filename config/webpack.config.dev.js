@@ -134,7 +134,7 @@ module.exports = {
     // We placed these paths second because we want `node_modules` to "win"
     // if there are any conflicts. This matches Node resolution mechanism.
     // https://github.com/facebook/create-react-app/issues/253
-    modules: ['node_modules'].concat(
+    modules: [path.resolve(__dirname, './src'), 'node_modules'].concat(
       // It is guaranteed to exist because we tweak it in `env.js`
       process.env.NODE_PATH.split(path.delimiter).filter(Boolean)
     ),
@@ -148,9 +148,14 @@ module.exports = {
       .map(ext => `.${ext}`)
       .filter(ext => useTypeScript || !ext.includes('ts')),
     alias: {
+      '~': path.resolve(__dirname, '../src'),
+      '@components': path.resolve(__dirname, '../src/components'),
+      '@screens': path.resolve(__dirname, '../src/screens'),
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
+      // '@screens': path.resolve(__dirname, '/screens'),
+      // '@lib': path.resolve(__dirname, '/lib'),
     },
     plugins: [
       // Adds support for installing with Plug'n'Play, leading to faster installs and adding

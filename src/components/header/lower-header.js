@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu, Icon } from 'antd';
-import Text from '../text';
-import View from '../view';
+import Text from '@components/text';
+import View from '@components/view';
 
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
