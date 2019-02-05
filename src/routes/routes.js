@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-ro
 import Loadable from 'react-loadable';
 import AboutScreen from './screens/about';
 
-const baseURL = '';
+const baseURL = '/ceva';
 
 const Loading = () => (
     <div style={ {
@@ -23,23 +23,21 @@ const About = Loadable({
   loading: Loading
 })
 
-const App = () => (
+const routes = () => (
   <Router
     basename={ baseURL }
   >
-      <div>
-          <Switch>
-              <Route exact path="/login" component={ Login } />
-              <Route exact path="/about" component={ AboutScreen } />
-              <Route path="/" component={ () => (<div>
-                Default homepage
-                <Link to="/login">Login</Link>
-                <Link to="/about">About</Link>            
-            </div>) } />
+    <Switch>
+        <Route exact path="/login" component={ Login } />
+        <Route exact path="/about" component={ AboutScreen } />
+        <Route path="/" component={ () => (<div>
+          Default homepage
+          <Link to="/login">Login</Link>
+          <Link to="/about">About</Link>            
+      </div>) } />
 
-          </Switch>
-      </div>
+    </Switch>
   </Router>
 );
 
-export default App;
+export default routes;
