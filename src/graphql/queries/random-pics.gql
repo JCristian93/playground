@@ -1,0 +1,3 @@
+query getRandomPicture {
+  randomPic @rest(type: "RandomPic", path: "/?type=meat-and-filler") 
+}
